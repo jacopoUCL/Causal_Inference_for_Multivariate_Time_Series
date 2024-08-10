@@ -1,0 +1,3 @@
+A: time_index
+B: Indoor temperature
+C: Outdoor temperature

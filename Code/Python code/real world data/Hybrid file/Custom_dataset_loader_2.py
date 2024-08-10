@@ -79,7 +79,6 @@ class dataframe_storer:
 
         print("Data cleaned.")
     
-    
     def save_data(self):
         """
         Saves the dictionary containing the datasets as a pickle file.
