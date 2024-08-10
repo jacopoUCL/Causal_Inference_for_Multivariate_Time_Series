@@ -1,0 +1,13 @@
+A: memory_usage_Portal
+B: cpu_usage_Portal
+C: Physical_Memory_prct_used_Portal
+D: cpu_prct_used_Portal
+E: 0_C_read_Portal
+F: memory_usage_VDI
+G: cpu_usage_VDI
+H: Physical_Memory_prct_used_VDI
+I: cpu_prct_used_VDI
+J: 0_C_read_VDI
+K: Chargement_portail
+L: Chargement_IE
+M: Default_Transaction

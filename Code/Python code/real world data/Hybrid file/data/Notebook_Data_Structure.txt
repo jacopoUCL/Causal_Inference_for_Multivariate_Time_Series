@@ -1,0 +1,27 @@
+1 Antivirus activity
+    - preprocessed 1
+    - preprocessed 2
+2 Dairy markets: Ten years (from 09/2008 to 12/2018) of monthly prices for milk M, butter B, and
+                 cheddar cheese C, so the three time series are of length 124.
+                 Ground truth: B <- M -> C
+                           0 0 0 
+                 adj.mat = 1 0 1
+                           0 0 0
+5 Temperature: Bivariate time series of length 168 about indoor I and outdoor O measurements
+               Ground truth: O -> I
+               
+               adj.mat = 0 1
+                         0 0 
+6 Veilleux: Interactions between predatory ciliate Dinidum nasutum and its prey Paramecium aurelia with different values of
+            Cerophyl concentrations (CC): 0.375 and 0.5. The lengths of the time series are 71 and 65.
+            - CC05a
+            - CC035
+            Ground truth: P -> D in both cases
+
+            adj.mat = 0 1
+                      1 0
+     
+7 Web activity: Activity in a web server which is provided by EasyVista
+                Ten time series collected with a one-minute sampling rate.
+    - preprocessed 1
+    - preprocessed 2
