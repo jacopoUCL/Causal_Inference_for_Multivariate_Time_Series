@@ -1,0 +1,197 @@
+Theoretical Background (TO DO):
+1 write the literature part
+    . finish definitions 
+    . add pictures
+    . add examples 
+    . add citations an rephrase what necessary controlling if text is similar to original source
+    . control notation and fix it if not uniform or change if not the best one to understand
+    . introduction to contribution part by describing experiment setting for TD2C (and eventually for past D2C algos), their results, their failure and summarizing limits of TD2C and potential improvements we're going to test for.
+    . take something useful from the papers introductions
+2 explore the library in python and understand all the 
+  passages to become able to modify the code where necessary to make improvements
+3 make experiments to test modifications of TD2C and comparisons with benchmark models
+4 insert the results and write the conclusion
+5 read again the principal sources and eventually modify the theory and/or add some examples and/or table and images. Read all again and enrich/improve/cut non necessary parts.
+
+EXTRA:
+- Read D2C inspirational paper
+- Read varsortability paper
+
+CONTRIBUTION (TO DO):
+- SCRIVERE IL PLANNING DEL LAVORO DAL 13/8 AL 13/9
+
+- adapt data from real-world applied paper to be used as dataset in d2c:
+    . Hybrids of CBNB paper
+        1 find the right format for D2C data
+        2 Map of the mechanism to create the datasets to use with D2C
+        3 Test D2C on the data 
+    . Look for other papers or datasets
+- map all possible contributes in a structured way and make a sort of planning
+- map the repository on iPad
+- do the Rstudio work
+- read papers in the literature to clarify some useful concepts for contributions
+    . miMR paper and other papers useful for the computational costs
+- map the TD2C and D2C mix idea
+- write notebooks to use TD2C, analyze, feature select, ecc.
+
+
+NOTES: 
+CONTRIBUTIONS ----------------------------------------------------------------
+FOR D2C:
+- could include more expert knowledge         
+- _could in some way derive the causality form the "highest" variables that originate causality first (weather, lows of nature), 
+  to simplify the learning of the relations in the markov blanket (just my phylosofical reasoning, but could be put in practice somehow)_
+- could better the filter from selecting the markov blanket's variables (now: mRMR and mIMR)(done in TD2C)
+- could find a better classifier (now: Random Forest)
+- could reduce the features (descriptors) to obtain a good accuracy in ROC-AUC (Information, for examples, why is it necessary in vector x?)
+- could add different features (descriptors) or statistics related to them
+- could extend the validation to real datasets
+- could infer less elements of the adjacency matrix (that is reducing MB's elements)
+- *could better the lazy learning phase to estimate the entropies with which we derive the information terms*
+- could find a way to prioritize the direct causes c_i, c_j that bring the most info about the asymmetris in the distributions 
+  (done in caD2C, could find another way to do it)
+- could better the renking making phase once we know the elements of the two markov blankets
+- _could consider more than two markov blankets using a third variable connected with both zi and zj (would violate the assumption of no common ancestors, 
+  but it could be a common child node (?)) How this could help?_
+
+FOR caD2C:
+- could help to extend the approach to multiclassification tasks (including ancestry and offspring for example)
+- could help to benchmark with other state-of-the-art methods
+- *could improve solution (now: ensamble methods) used to solve umbalancedness of classification step*
+- _isn't it possible to rely only on descriptor of interaction information?_
+- *could combine D2C preliminary step to select only the causes (which are most informative) with the caD2C introduction of interaction information descriptor.*
+  *(maybe improving the causal filter)(partially already done in TD2C)*
+- *HUGE PROBLEM: Could help in apply the method to real-wolrd datasets (reproducibility)*
+
+FOR TD2C:
+- *could work on how to relax even more the assumptions*
+  (no confounding, no selection bias, no feedback configurations, faithfulness of DAG, causal relations descrivable through the DAG)
+- *could conduct a relevant number of experiments on different dataset to find the most relevant descriptors from the 28 original ones*
+- *could better the estimation of the previous and following states for each variable (first step of the algo)*
+- *could test for artificial dataset with a lower or higher variability (now sd is 0.01)*
+   *(in general, could test for different parameters, probably already done)* 
+- *could try for another neighborhood size and components selection (now is random with limits)*
+- _could improve the generative processes? how are they choosed/created now?_
+- _in general, could add methods to give the possibility for a user to manually modify some parameters or the genertive processes on the basis of the context,_
+  _the real variables for which he wants to investigate. I think there could be more involvment of experts knowledge_
+- *relaxing the initial assumptions could also give the possibility of considering more generative processes (now 20)*
+- *could benchmark for alternative or just additional state-of-the-art methods (they should respect D2C's assumptions' restrictions)*
+- *could evaluate combos of D2C with other methods (in the VAR-LiNGAM style)*
+------------------------------------------------------------------------------
+
+causal learning categorizations ----------------------------------------------
+\textbf{make a graphic with these categorizations}\\
+Categorizations of Causal Discovery and Causal Learning
+Based on Data Type:
+- Static Data: Methods analyzing data that do not change over time.
+- Temporal Data: Methods analyzing time series data where the temporal order of data points is crucial. 
+Based on Methodology:
+- Constraint-Based Methods: Identify causal structures by testing for conditional independencies.
+- Score-Based Methods: Use scoring criteria to evaluate different causal models and select the best one.
+- Hybrid Methods: Combine features of both constraint-based and score-based methods.
+- Functional Causal Models: Assume specific functional relationships between variables, like Structural Equation Models (SEMs).
+Based on Interventional Data:
+- Observational Data: Only uses naturally occurring data.
+- Interventional Data: Uses data obtained through interventions or manipulations.
+
+Based on Statistical Models:
+- Bayesian Methods: Utilize Bayesian inference to determine causal structures.
+- Frequentist Methods: Use traditional statistical methods without Bayesian priors.
+
+Causal Discovery and Causal Learning are often used interchangeably, but they can differ in emphasis:
+- Causal Discovery: Focuses on identifying causal relationships from data.
+- Causal Learning: Encompasses causal discovery but also includes learning causal mechanisms and applying causal models for predictions and interventions.
+
+Based on Learning Approach:
+Supervised Learning: Using labeled data to learn causal relationships.
+Unsupervised Learning: Inferring causal structures without labeled outcomes.
+Reinforcement Learning: Learning causal relationships through interactions with an environment.
+
+Based on Model Type:
+Probabilistic Models: Use probability distributions to represent uncertainty in causal relationships.
+Deterministic Models: Assume a deterministic relationship between variables.
+------------------------------------------------------------------------------
+
+assumptions ------------------------------------------------------------------
+. Continuous-valued series\\  %
+    . Linearity        \\         %
+    . Discrete time  \\           %
+    . Known lag      \\           % ---> can find them in the Granger paper
+    . Stationariety.  \\           % 
+    . Perfectly observed   \\     %
+    . Complete system\\
+    . Sufficiency\\
+    . Faithfulness\\
+    . Non-Gaussianity\\
+    . No Instantaneous effects\\
+    . Time Homogeneity\\
+    . Additivity\\
+    . Sparsity\\
+    . No hidden confounders\\
+    . Independence of noise terms\\
+    . temporal order\\
+    . Acyclicity\\
+    . Model Specification\\
+    . Kernel assumption\\
+    . Consistency\\
+    . All other possible assumptions\\
+
+------------------------------------------------------------------------------
+
+Experiments ------------------------------------------------------------------
+\textit{Introduction to contribution part by describing experimental setting for TD2C (and eventually for past D2C algos), their results, their failure and summarizing limits of TD2C and potential improvements we're going to test for (What are the assumptions and/or the parameters and/or the procedure steps that can be changed/removed/better tested and why?).\\
+Which is the results I wanted to achieve when started the experiments, even if not achieved?\\
+Theoretical explanations of what I've worked on.\\
+Experiments I've done: \\
+- Experimental setting (What are the procedures I followed, What are the settings, in terms of data, software and algorithms i used (python, R, Causeme, ...), What are the evaluation metrics i used and why,  What methods i compared to TD2C and/or its modified version, why are they suitable for this scope, Which datasets i used, where did i find them, why are they suitable for my context.)\\
+- Relevant experiments (What are the experiments I conducted, of which kind, only to test already tested scenarios to better confirm them maybe changing the dataset and the procedures and/or testing something new)\\
+- Results (How TD2C or its modified version behave with respect to other sota methods on the base of all metrics, What are the most relevant results to what we're looking for, What proposed modifications gave positive results.  What gave negative ones/did't change so much, why, Show some tables/graphics to better explain the results. Other tasks I completed/contribution to the process I gave.).}\\
+
+------------------------------------------------------------------------------
+
+D2C \& caD2C -----------------------------------------------------------------
+
+\textit{Fields of application so far\\
+evolution of the method (D2C $->$ caD2C)\\
+detailed explanation of methods and processes behind\\
+What is its scope.\\
+Why does it enlarge the causal inference field.\\
+What are the theoretical concepts behind it.\\
+How does its base formulation work.\\
+What are the limits of the base formulation.\\
+How does the last two versions improve the base one.\\
+How does the assumptions changed.}\\
+
+------------------------------------------------------------------------------
+
+Causal Inference for Time Series ---------------------------------------------
+
+\textit{
+What are time series.\\ 
+Why is their analysis, inference and prediction useful.\\ 
+In which field it has been applied and could be applied in the future.\\ 
+What are the differences with static causal inference and what are the main adding difficulties for it.\\
+Specification of the kind of methods we're gonna use.\\
+}
+
+------------------------------------------------------------------------------
+
+Causality, Causal Inference \& Causal Discovery -------------------------------
+
+\textit{What is causality and why is it interesting to go above the concept of dependence between variables.\\
+What is causal inference and what is it useful for.\\
+What are its main topics and fields of application.\\
+What have been its main contributors during time.\\
+What is causal discovery and what is it useful for.\\
+}
+
+------------------------------------------------------------------------------
+
+Introduction -----------------------------------------------------------------
+
+\textit{The introduction contains a synthetic description of the thesis, reflecting the outline of the paper. The purpose and the goal of the study should be clearly stated and the motivations behind the study should be given.\\
+- What is the main scope of the thesis\\
+- What does the thesis contain\\
+- Why does the subject interested me.\\
+- What do I expect to achieve with this work.\\
+}

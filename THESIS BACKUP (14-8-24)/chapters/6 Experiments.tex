@@ -1,0 +1,41 @@
+\chapter{Experiments}\label{Contributions}
+
+We reached the part of the dissertation in which we we investigate for potential improvements of the mentioned methods from a theoretical point of view and we conduct experiments with the scope of verifying such improvements. This is, from a practical point of view, the most important section of the thesis. We display a series of tests, conducted with the scope of improving TD2C method from various points of view. For each experiment, data generation, experimental settings and results will be shown and explained.
+
+\section{Real-data validation}\label{contr1}
+
+\textit{Datasets}
+\begin{enumerate}
+    \item \textit{Antivirus Activity} (multivariate): 13 time series on the impacts of antivirus activity on some servers 
+    \item \textit{Dairy markets} (multivariate): ten years (from 09/2008 to 12/2018) of monthly prices for milk, butter, and cheddar cheese
+    \item \textit{Temperature}] (bivariate): indoor I and outdoor O temperature measurements.
+    \item \textit{Veilleux} (bivariate): interactions between predatory ciliate Dinidum nasutum and its prey Paramecium aurelia with different values of Cerophyl concentrations (CC): 0.375 and 0.5
+    \item \textit{Web activity} (multivariate): activity in a web server which is provided by EasyVista Ten time series collected with a one-minute sampling rate.
+    \item Others ...
+\end{enumerate}
+
+Number 1, 2, 3, 4 and 5 are taken from \cite{bystrova2024causal}, number x, y ,z are taken from ...\\
+
+\textit{Procedure}\\
+TD2C has been run on the time series for each dataset. Then, resulting labels' formats have been adapted to be compared with the ground truth ones, obtained from the adjacency matrices of the considered datasets. The same procedure has been followed for some state of the art methods (PCMCI, VarLiNGAM, D2C, DYNOTEARS \textbf{\textit{to be decided}}) to benchmark TD2C results.
+\textit{Results}
+As final stage, we dispose the most relevant results and their interpretation.\\
+
+\section{Linear processes validation}\label{contr2}
+\subsection{Data generation}
+\subsection{Experimental settings}
+\subsection{Results discussion}
+
+\section{TD2C extensions}\label{contr3}
+\subsection{Data generation}
+\subsection{Experimental settings}
+\subsection{Results discussion}
+
+\section{Computational cost reduction}\label{contr4}
+\subsection{Data generation}
+\subsection{Experimental settings}
+\subsection{Results discussion}
+
+\section{Code contributions}\label{contr5}
+\subsection{Experimental settings}
+\subsection{Results discussion}

@@ -1,0 +1,74 @@
+\appendix
+\chapter{List of generative Processes from \cite{bontempi2020learning}}\label{gp}
+\begin{table}[!h]
+\resizebox{\linewidth}{!}{
+\begin{minipage}{1.4\linewidth}
+\begin{align}
+& Y_{t+1}\left[j\right]=-0.4 \frac{\left(3-\bar{Y}_t\left[\mathcal{N}_j\right]^2\right)}{\left(1+\bar{Y}_t\left[\mathcal{N}_j\right]^2\right)}+0.6 \frac{3-\left(\bar{Y}_{t-1}\left[\mathcal{N}_j\right]-0.5\right)^3}{1+\left(\bar{Y}_{t-1}\left[\mathcal{N}_j\right]-0.5\right)^4}+W_{t+1}\left[j\right] \label{eq:p1}  \\ 
+& Y_{t+1}\left[j\right]=\left(0.4-2 \cos \left(40 \bar{Y}_{t-2}\left[\mathcal{N}_j\right]\right) \exp \left(-30 \bar{Y}_{t-2}\left[\mathcal{N}_j\right]^2\right)\right) \bar{Y}_{t-2}\left[\mathcal{N}_j\right]+\left(0.5-0.5 \exp \left(-50 \bar{Y}_{t-1}\left[\mathcal{N}_j\right]^2\right)\right) \bar{Y}_{t-1}\left[\mathcal{N}_j\right]+W_{t+1}\left[j\right] \label{eq:p2} \\ 
+& Y_{t+1}\left[j\right]=1.5 \sin \left(\pi / 2 \bar{Y}_{t-1}\left[\mathcal{N}_j\right]\right)-\sin \left(\pi / 2 \bar{Y}_{t-2}\left[\mathcal{N}_j\right]\right)+W_{t+1}\left[j\right] \label{eq:p3}\\ 
+& Y_{t+1}\left[j\right]=2 \exp \left(-0.1 \bar{Y}_t\left[\mathcal{N}_j\right]^2\right) \bar{Y}_t\left[\mathcal{N}_j\right]-\exp \left(-0.1 \bar{Y}_{t-1}\left[\mathcal{N}_j\right]^2\right) \bar{Y}_{t-1}\left[\mathcal{N}_j\right]+W_{t+1}\left[j\right] \label{eq:p4}\\ 
+& Y_{t+1}\left[j\right]=-2 \bar{Y}_t\left[\mathcal{N}_j\right] I\left(\bar{Y}_t\left[\mathcal{N}_j\right]<0\right)+0.4 \bar{Y}_t\left[\mathcal{N}_j\right] I\left(\bar{Y}_t\left[\mathcal{N}_j\right]<0\right)+W_{t+1}\left[j\right]\label{eq:p5} \\ 
+& Y_{t+1}\left[j\right]=0.8 \log \left(1+3 \bar{Y}_t\left[\mathcal{N}_j\right]^2\right)-0.6 \log \left(1+3 \bar{Y}_{t-2}\left[\mathcal{N}_j\right]^2\right)+W_{t+1}\left[j\right]\label{eq:p6} \\ 
+& Y_{t+1}\left[j\right]=\left(0.4-2 \cos \left(40 \bar{Y}_{t-2}\left[\mathcal{N}_j\right]\right) \exp \left(-30 \bar{Y}_{t-2}\left[\mathcal{N}_j\right]^2\right)\right) \bar{Y}_{t-2}\left[\mathcal{N}_j\right]+\left(0.5-0.5 \exp \left(-50 \bar{Y}_{t-1}\left[\mathcal{N}_j\right]^2\right)\right) \bar{Y}_{t-1}\left[\mathcal{N}_j\right]+W_{t+1}\left[j\right] \label{eq:p7}\\ 
+& Y_{t+1}\left[j\right]=\left(0.5-1.1 \exp \left(-50 \bar{Y}_t\left[\mathcal{N}_j\right]^2\right)\right) \bar{Y}_t\left[\mathcal{N}_j\right]+\left(0.3-0.5 \exp \left(-50 \bar{Y}_{t-2}\left[\mathcal{N}_j\right]^2\right)\right) \bar{Y}_{t-2}\left[\mathcal{N}_j\right]+W_{t+1}\left[j\right]\label{eq:p8} \\ 
+& Y_{t+1}\left[j\right]=0.3 \bar{Y}_t\left[\mathcal{N}_j\right]+0.6 \bar{Y}_{t-1}\left[\mathcal{N}_j\right]+\frac{\left(0.1-0.9 \bar{Y}_t\left[\mathcal{N}_j\right]+0.8 \bar{Y}_{t-1}\left[\mathcal{N}_j\right]\right)}{\left(1+\exp \left(-10 \bar{Y}_t\left[\mathcal{N}_j\right]\right)\right)}+W_{t+1}\left[j\right]\label{eq:p9} \\ 
+& 
+Y_{t+1}\left[j\right]=\operatorname{sign}\left(\bar{Y}_t\left[\mathcal{N}_j\right]\right)+W_{t+1}\left[j\right] \label{eq:p10} \\ 
+& Y_{t+1}\left[j\right]=0.8 \bar{Y}_t\left[\mathcal{N}_j\right]-\frac{0.8 \bar{Y}_t\left[\mathcal{N}_j\right]}{\left(1+\exp \left(-10 \bar{Y}_t\left[\mathcal{N}_j\right]\right)\right)}+W_{t+1}\left[j\right]\label{eq:p11} \\ 
+& Y_{t+1}\left[j\right]=0.3 \bar{Y}_t\left[\mathcal{N}_j\right]+0.6 \bar{Y}_{t-1}\left[\mathcal{N}_j\right]+\frac{\left(0.1-0.9 \bar{Y}_t\left[\mathcal{N}_j\right]+0.8 \bar{Y}_{t-1}\left[\mathcal{N}_j\right]\right)}{\left(1+\exp \left(-10 \bar{Y}_t\left[\mathcal{N}_j\right]\right)\right)}+W_{t+1}\left[j\right]\label{eq:p12} \\ 
+& Y_{t+1}\left[j\right]=0.38 \bar{Y}_t\left[\mathcal{N}_j\right]\left(1-\bar{Y}_{t-1}\left[\mathcal{N}_j\right]\right)+W_{t+1}\left[j\right]\label{eq:p13} \\ 
+& Y_{t+1}\left[j\right]=\left\{\begin{array}{l}-0.5 \bar{Y}_t\left[\mathcal{N}_j\right] \quad \text { if } \quad \bar{Y}_t\left[\mathcal{N}_j\right]<1 \\ 0.4 \bar{Y}_t\left[\mathcal{N}_j\right]\end{array}\right.\label{eq:p14} \\ 
+& Y_{t+1}\left[j\right]=\left\{\begin{array}{l}0.9 \bar{Y}_t\left[\mathcal{N}_j\right]+W_{t+1}\left[j\right] \text { if } \quad\left|\bar{Y}_t\left[\mathcal{N}_j\right]\right|<1 \\ -0.3 \bar{Y}_t\left[\mathcal{N}_j\right]+W_{t+1}\left[j\right]\end{array}\right.\label{eq:p15} \\ 
+& \begin{aligned} Y_{t+1}\left[j\right] & =\left\{\begin{array}{l}-0.5 \bar{Y}_t\left[\mathcal{N}_j\right]+W_{t+1}\left[j\right] \quad \text { if } \quad x_t=1 \\ 0.4 \bar{Y}_t\left[\mathcal{N}_j\right]+W_{t+1}\left[j\right]\end{array}\right. \\ x_{t+1} & =1-x_t, x_0=1\end{aligned}\label{eq:p16} \\ 
+& Y_{t+1}\left[j\right]=\sqrt{0.000019+0.846 *\left(\bar{Y}_t\left[\mathcal{N}_j\right]^2+0.3 \bar{Y}_{t-1}\left[\mathcal{N}_j\right]^2+0.2 \bar{Y}_{t-2}\left[\mathcal{N}_j\right]^2+0.1 \bar{Y}_{t-3}\left[\mathcal{N}_j\right]^2\right)} W_{t+1}\left[j\right]\label{eq:p17}\\ 
+& Y_{t+1}\left[j\right] = 0.9 \cdot \bar{Y}_t\left[\mathcal{N}_j\right] + W_{t+1}\left[j\right] \label{eq:p18}\\ 
+& Y_{t+1}\left[j\right] = 0.4 \cdot \bar{Y}_{t-1}\left[\mathcal{N}_j\right] + 0.6 \cdot \bar{Y}_{t-2}\left[\mathcal{N}_j\right] + W_{t+1}\left[j\right]\label{eq:p19}\\ 
+& Y_{t+1}\left[j\right] = 0.5 \cdot \bar{Y}_{t-3}\left[\mathcal{N}_j\right] + W_{t+1}\left[j\right]\label{eq:p20}\\ 
+\end{align}
+\end{minipage}
+}
+\caption{ }
+\label{a}
+\end{table}
+
+\chapter{List of descriptors from \cite{bontempi2020learning}}\label{descriptors}
+\begin{table}[!h]
+\resizebox{\linewidth}{!}{
+\begin{minipage}{1.4\linewidth}
+\begin{align}
+n \label{eq:descriptor-18} \\
+m \label{eq:descriptor-19}\\
+m/n \label{eq:descriptor-20}\\
+b: \mathbf{z}_j = b \cdot (\mathbf{z}_i \oplus \mathbf{MB}_j) \text{, where} \oplus\text{indicates vector concatenation} \label{eq:descriptor-01} \\
+b: \mathbf{z}_i = b \cdot (\mathbf{z}_j \oplus \mathbf{MB}_i) \text{, where} \oplus\text{indicates vector concatenation}  \label{eq:descriptor-02} \\
+\operatorname{kurt}(\mathbf{z}_i) = \mathbb{E}[(\mathbf{z}_i-\mathbb{E}[\mathbf{z}_i])^4] / \left(\mathbb{E}[(\mathbf{z}_i-\mathbb{E}[\mathbf{z}_i])^2]\right)^2 - 3 \label{eq:descriptor-21}\\ 
+\operatorname{kurt}(\mathbf{z}_j) = \mathbb{E}[(\mathbf{z}_j-\mathbb{E}[\mathbf{z}_j])^4] / \left(\mathbb{E}[(\mathbf{z}_j-\mathbb{E}[\mathbf{z}_j])^2]\right)^2 - 3 \label{eq:descriptor-22}\\ 
+\operatorname{skew}(\mathbf{z}_i) = \mathbb{E}[(\mathbf{z}_i-\mathbb{E}[\mathbf{z}_i])^3] / \left(\mathbb{E}[(\mathbf{z}_i-\mathbb{E}[\mathbf{z}_i])^2]\right)^{3/2} \label{eq:descriptor-23}\\
+\operatorname{skew}(\mathbf{z}_j) = \mathbb{E}[(\mathbf{z}_j-\mathbb{E}[\mathbf{z}_j])^3] / \left(\mathbb{E}[(\mathbf{z}_j-\mathbb{E}[\mathbf{z}_j])^2]\right)^{3/2}
+ \label{eq:descriptor-24}\\
+\operatorname{HOC_{1,2}}(\mathbf{z}_i, \mathbf{z}_j) = \mathbb{E}\left[ (\mathbf{z}_i - \mathbb{E}[\mathbf{z}_i])^1 \cdot (\mathbf{z}_j - \mathbb{E}[\mathbf{z}_j])^2 \right] \label{eq:descriptor-25}\\
+\operatorname{HOC_{2,1}}(\mathbf{z}_i, \mathbf{z}_j) = \mathbb{E}\left[ (\mathbf{z}_i - \mathbb{E}[\mathbf{z}_i])^2 \cdot (\mathbf{z}_j - \mathbb{E}[\mathbf{z}_j])^1 \right] \label{eq:descriptor-26}\\
+\operatorname{HOC_{1,3}}(\mathbf{z}_i, \mathbf{z}_j) = \mathbb{E}\left[ (\mathbf{z}_i - \mathbb{E}[\mathbf{z}_i])^1 \cdot (\mathbf{z}_j - \mathbb{E}[\mathbf{z}_j])^3 \right] \label{eq:descriptor-27}\\
+\operatorname{HOC_{3,1}}(\mathbf{z}_i, \mathbf{z}_j) = \mathbb{E}\left[ (\mathbf{z}_i - \mathbb{E}[\mathbf{z}_i])^3 \cdot (\mathbf{z}_j - \mathbb{E}[\mathbf{z}_j])^1 \right] \label{eq:descriptor-28}\\
+    I(\mathbf{z}_i ; \mathbf{z}_j) \label{eq:descriptor-08} \\
+    I(\mathbf{z}_j ; \mathbf{z}_i) \label{eq:descriptor-09} \\ 
+    I(\mathbf{m}_j^{(k)} ; \mathbf{z}_i) \forall \mathbf{m}_j^{(k)} \in \mathbf{MB}_j \label{eq:descriptor-10} \\
+    I(\mathbf{m}_i^{(k)} ; \mathbf{z}_j) \forall \mathbf{m}_i^{(k)} \in \mathbf{MB}_i \label{eq:descriptor-11}\\
+    I(\mathbf{z}_i ; \mathbf{z}_j | \mathbf{MB}_i \cap \mathbf{MB}_j) \label{eq:descriptor-03} \\
+    I(\mathbf{z}_j ; \mathbf{z}_i | \mathbf{MB}_j) \label{eq:descriptor-04} \\
+    I(\mathbf{z}_i ; \mathbf{z}_j | \mathbf{MB}_i) \label{eq:descriptor-05} \\
+    I(\mathbf{z}_j ; \mathbf{z}_i | \mathbf{MB}_i \cup \mathbf{m}_j^{(k)}) \forall \mathbf{m}_j^{(k)} \in \mathbf{MB}_j \label{eq:descriptor-06} \\
+    I(\mathbf{z}_i ; \mathbf{z}_j | \mathbf{MB}_j \cup \mathbf{m}_i^{(k)}) \forall \mathbf{m}_i^{(k)} \in \mathbf{MB}_i \label{eq:descriptor-07}\\
+    I(\mathbf{z}_i ; \mathbf{m}_j^{(k)} | \mathbf{z}_j) \forall \mathbf{m}_j^{(k)} \in \mathbf{MB}_j \label{eq:descriptor-12} \\
+I(\mathbf{z}_j ; \mathbf{m}_i^{(k)} | \mathbf{z}_i) \forall \mathbf{m}_i^{(k)} \in \mathbf{MB}_i \label{eq:descriptor-13} \\
+    I(\mathbf{m}_i^{(k_i)} ; \mathbf{m}_j^{(k_j)} | \mathbf{z}_i) \forall (\mathbf{m}_i^{(k_i)}, \mathbf{m}_j^{(k_j)}) \in \mathbf{MB_{i}} \times \mathbf{MB_{j}} \label{eq:descriptor-14} \\
+    I(\mathbf{m}_j^{(k_j)} ; \mathbf{m}_i^{(k_i)} | \mathbf{z}_j) \forall (\mathbf{m}_i^{(k_i)}, \mathbf{m}_j^{(k_j)}) \in \mathbf{MB_{i}} \times \mathbf{MB_{j}} \label{eq:descriptor-15}\\
+        I(\mathbf{m}_i^{(k_{i}^{1})} ; \mathbf{m}_i^{(k_{i}^{2})} | \mathbf{z}_i) - I(\mathbf{m}_i^{(k_{i}^{1})} ; \mathbf{m}_i^{(k_{i}^{2})}) \forall (\mathbf{m}_i^{(k_{i}^{1})}, \mathbf{m}_i^{(k_{i}^{2})}) \in \mathbf{MB_{i}} \times \mathbf{MB_{i}} \label{eq:descriptor-16} \\
+    I(\mathbf{m}_j^{(k_{j}^{1})} ; \mathbf{m}_j^{(k_{j}^{2})} | \mathbf{z}_j) - I(\mathbf{m}_j^{(k_{j}^{1})} ; \mathbf{m}_j^{(k_{j}^{2})}) \forall (\mathbf{m}_j^{(k_{j}^{1})}, \mathbf{m}_j^{(k_{j}^{2})}) \in \mathbf{MB_{j}} \times \mathbf{MB_{j}} \label{eq:descriptor-17}    
+\end{align}
+\end{minipage}
+}
+\caption{ }
+\label{a}
+\end{table}

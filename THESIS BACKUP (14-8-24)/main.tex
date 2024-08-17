@@ -1,0 +1,216 @@
+\documentclass[12pt, a4paper]{report}
+
+\setlength{\parindent}{0pt}
+% Packages
+\usepackage{amsmath}
+\usepackage{bm}
+\usepackage{subcaption}
+\usepackage{cancel}
+\usepackage{subcaption}
+\usepackage[utf8]{inputenc}   % Allows the use of UTF-8 encoded characters
+\usepackage[dvipsnames]{xcolor} % add more colors
+\usepackage{amsmath, amssymb} % Provides advanced mathematical tools and symbols
+\usepackage{amsthm}           % Allows the creation of theorem-like environments
+\usepackage{cancel}
+\usepackage{colortbl} % For coloring cells
+\usepackage{tcolorbox} % For coloring cells with smaller background
+\usepackage{tikz} % For dags
+\usepackage{graphicx}
+\usepackage{subcaption}
+\usepackage{algorithm}        % Provides an environment for writing algorithms
+\usepackage{algpseudocode}    % Used in conjunction with 'algorithm' for algorithmic pseudocode
+\usepackage{graphicx}         % Allows for the inclusion of graphics (images)
+\usepackage[]{xcolor}         % Provides tools for color management in documents
+\usepackage{hyperref}         % Enables hyperlinks within the document
+\usepackage{caption}          % Customizes the appearance of captions for figures and tables
+\usepackage{float}            % Improves the placement of figures and tables
+\usepackage{geometry}         % Allows for the customization of page layout and margins
+\usepackage{setspace}         % Enables control over line spacing
+\usepackage{times}            % Uses Times New Roman font
+\usepackage{titlesec}         % Provides tools for customizing section titles
+\usepackage[backend=biber, style=numeric, sorting=ynt]{biblatex} % Manages bibliography with biber backend, numeric style, and sorts entries by year, name, title
+
+% Geometry package for setting margins
+\geometry{
+  left=2.5cm,
+  right=2.5cm,
+  top=2.5cm,
+  bottom=2.5cm,
+}
+
+%--------------------------------------------------------------------------
+
+\titleformat{\chapter}[display]
+  {\normalfont\LARGE\bfseries}{\chaptertitlename\ \thechapter}{20pt}{\Huge}
+\titleformat{\section}
+{\normalfont\Large\bfseries}
+{\thesection}{1em}{}
+\titleformat{\subsection}
+{\normalfont\Large\bfseries}
+{\thesubsection}{1em}{}
+\titleformat{\subsubsection}
+{\normalfont\large\bfseries}
+{\thesubsubsection}{1em}{}
+\DeclareCaptionFont{}{}
+\captionsetup{labelfont={bf}}
+\renewcommand{\arraystretch}{1.4} % Enlarge cells in tables
+
+\newcommand{\RNum}[1]{\uppercase\expandafter{\romannumeral #1\relax}}
+
+\addbibresource{ref.bib}
+
+% Line spacing
+\onehalfspacing
+
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}[chapter]
+
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}[chapter]
+\newtheorem{lemma}[theorem]{Lemma}
+
+\theoremstyle{remark}
+\newtheorem{remark}{Remark}[chapter]
+
+% Custom command to format Introduction
+\newcommand{\introchapter}{
+  \chapter*{Introduction}
+  \addcontentsline{toc}{chapter}{\numberline{1}Introduction}
+  \markboth{Introduction}{Introduction}
+  \setcounter{chapter}{0}
+}
+
+% Custom command to format Conclusion
+\newcommand{\conclchapter}{
+  \chapter*{Conclusion}
+  \addcontentsline{toc}{chapter}{\numberline{6}Conclusion}
+  \markboth{Conclusion}{Conclusion}
+  \setcounter{chapter}{6}
+}
+
+% Independence command
+\newcommand{\independent}{\protect\mathpalette{\protect\independenT}{\perp}}
+\def\independenT#1#2{\mathrel{\rlap{$#1#2$}\mkern2mu{#1#2}}}
+
+%dependence command
+\newcommand{\dep}{\not\!\perp\!\!\!\perp}
+
+% Backslash command
+\newcommand{\textbackslash}{\texttt{\symbol{92}}}
+
+% Title Page
+\begin{document}
+\title{THESIS TITLE}
+\author{Jacopo Palombarini}
+\date{2024}
+
+%----------------------------- Frontispiece
+\pagenumbering{gobble} % Suppress page numbers for the title page and other preliminary pages
+\newgeometry{margin=0.8in}
+\begin{titlepage}
+    \begin{center}
+        \vspace*{0.2cm}
+        {\fontsize{19pt}{20pt}\selectfont \textbf{Alma Mater Studiorum - Università di Bologna}\par}
+    
+        \noindent\hrulefill
+        \vspace{0.8cm}
+        
+        \Large
+        
+        Department of Statistical Science \\
+        Second Cycle Degree in Statistical Sciences
+        
+        
+        
+        \Large
+        \vspace{5cm}
+        {\fontsize{22.5pt}{22.5}{\textbf{Causal Inference in Multivariate Time Series: a Machine Learning-based prospective}}}
+
+        
+     
+        \vspace{4.5cm}
+         \begin{minipage}[t]{0.48\textwidth}
+        \begin{flushleft}
+            {\fontsize{16pt}{16pt}\textbf{Presented by:} \\ Jacopo Palombarini \\ 0001076600}
+        \end{flushleft}
+    \end{minipage} 
+    \begin{minipage}[t]{0.48\textwidth}
+        \begin{flushright}
+            {\fontsize{16pt}{16pt}\textbf{UNIBO Supervisor:} \\ Prof. Pietro Rigo\\
+            {\fontsize{16pt}{16pt}\textbf{ULB Supervisors:} \\ 
+            Prof. Gianluca Bontempi\\
+            Prof. Gian Marco Paldino}
+        \end{flushright}
+    \end{minipage}
+        
+        
+        \vfill
+        \noindent\hrulefill
+        \vspace{0.3cm}
+        \Large
+        
+       
+        
+        \RNum{2} SESSION \\
+        Academic Year 2023/2024
+    \end{center}
+\end{titlepage}
+\restoregeometry
+\vspace*{5cm}
+\begin{flushright}
+  {\parbox{4.2cm}{\textit{}}}
+\end{flushright}
+% ----------------------------------------------
+
+% ----------------------------- Abstract
+\clearpage
+\pagenumbering{roman} % Start Roman numerals from the abstract
+\include{chapters/1 abstract}
+
+% ----------------------------- Table of Contents
+\tableofcontents
+\clearpage
+
+% ----------------------------- Main Content
+% Introduction
+\introchapter
+\pagenumbering{arabic} % Switch to Arabic numerals for the main content
+\input{chapters/2 Introduction.tex}
+
+\include{chapters/3 Theoretical_Background.tex}
+
+\include{chapters/4 State_of_the_art.tex}
+    % Definizioni formali del problema 
+    % Metodi che affrontano il problema 
+    % D2C
+
+\include{chapters/5 Methods.tex}
+    % TD2C
+    % Contributo 1 
+    % Contributo 2
+    % Contributo 3
+
+\include{chapters/6 Experiments.tex}
+    % Contributo 1
+        % Generazione dei dati 
+        % Settings degli esperimenti
+        % Discussione degli esperimenti
+    % Contributo 2
+        % Generazione dei dati 
+        % Settings degli esperimenti
+        % Discussione degli esperimenti
+    % Contributo 3
+        % Generazione dei dati 
+        % Settings degli esperimenti
+        % Discussione degli esperimenti
+
+\conclchapter
+\input{chapters/7 Conclusion.tex}
+
+\include{chapters/8 Appendix.tex}
+
+\include{chapters/9 Acknowledgements.tex}
+
+\include{chapters/10 References.tex}
+
+\end{document}
